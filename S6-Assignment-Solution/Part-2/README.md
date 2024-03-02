@@ -1,7 +1,7 @@
 
 # MNIST Classification using Convolutional Neural Networks
 
-This project implements a Convolutional Neural Network (CNN) for handwritten digit classification on the MNIST dataset using PyTorch. The CNN architecture consists of several convolutional layers followed by batch normalization, dropout, and max-pooling layers. The model achieves a high accuracy of 99.4% on the test set.
+This project implements a Convolutional Neural Network (CNN) for handwritten digit classification on the MNIST dataset using PyTorch. The CNN architecture consists of several convolutional layers followed by batch normalization, dropout, and max-pooling layers. The model achieves a high accuracy of `99.52%` on the test set using `19,865` trainable parameters.
 
 ## Getting Started
 
