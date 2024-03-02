@@ -49,7 +49,7 @@ The CNN model consists of the following layers:
 | Conv6                        | 6th convolutional layer without activation              | 1            | 31              |
 | Softmax                      | Output layer with log softmax activation                  | -            | -               |
 
-The model architecture is summarized using the torchsummary library. It uses `20,427` training parameters
+The model architecture is summarized using the torchsummary library. It uses `19,865` training parameters
 
 ![Image](images/model_summary.png)
 ## Training and Evaluation
@@ -61,7 +61,7 @@ The model architecture is summarized using the torchsummary library. It uses `20
 
 ## Results
 
-The model achieves a test accuracy of `99.4%` after training for `20 epochs`.
+The model achieves a test accuracy of `99.52%` after training for `20 epochs`.
 ### Training and Testing Loss
 
 Below image illustrates how well the model is learning from the training data (training loss) and how well it is performing on new, unseen data (testing loss) as training progresses. Loss is a measure of how far off the model's predictions are from the actual values. 
