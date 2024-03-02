@@ -10,7 +10,7 @@ To run the code, follow these steps:
 1. Clone the repository
 2. Install the required dependencies
   - Instead you can choose to copy the the notebook from [source](https://colab.research.google.com/drive/1kQNvzvqGzR6wTbM8rK_ZBlDgRpcErXbe?usp=sharing)
-3. Execute the Ipython Notebook
+3. Execute the `Session_6_Soluiton` Ipython Notebook
   - You can use [colab](https://colab.google/), [vscode](https://code.visualstudio.com/) or [jupyter](https://jupyter.org/) notebooks to run the code
 
 
