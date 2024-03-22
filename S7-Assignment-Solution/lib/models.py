@@ -2,6 +2,46 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 dropout_value = 0.1
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(1, 16, kernel_size=3)
+        self.bn1 = nn.BatchNorm2d(16)  # Batch normalization after the first convolutional layer
+        self.conv2 = nn.Conv2d(16, 24, kernel_size=3)
+        self.bn2 = nn.BatchNorm2d(24)  # Batch normalization after the second convolutional layer
+        self.conv2_1 = nn.Conv2d(24, 16, kernel_size=1)
+        self.bn2_1 = nn.BatchNorm2d(16)  # Batch normalization after the second 1x1 convolutional layer
+        self.conv3 = nn.Conv2d(16, 20, kernel_size=3, padding = 1)
+        self.bn3 = nn.BatchNorm2d(20)  # Batch normalization after the third convolutional layer
+        self.conv4 = nn.Conv2d(20, 25, kernel_size=3)
+        self.bn4 = nn.BatchNorm2d(25)  # Batch normalization after the fourth convolutional layer
+        self.conv4_1 = nn.Conv2d(25, 19, kernel_size=1)
+        self.bn4_1 = nn.BatchNorm2d(19)  # Batch normalization after the fourth 1x1 convolutional layer
+        self.conv5 = nn.Conv2d(19, 29, kernel_size=3)
+        self.bn5 = nn.BatchNorm2d(29)
+        self.conv6 = nn.Conv2d(29, 10, kernel_size=3)
+
+        self.dropout = nn.Dropout2d(p=0.1)  # Minimal dropout with 10% probability
+
+    def forward(self, x):
+        x = F.relu(self.bn1(self.conv1(x)))  # channel_size : 26, Receptive Field : 2
+        x = self.dropout(x)
+        x = F.relu(self.bn2(self.conv2(x)))  #channel_size : 24, Receptive Field : 4
+        x = self.dropout(x)
+        x = F.max_pool2d(x, 2)  # channel_size : 12, Receptive Field : 5
+        x = F.relu(self.bn2_1(self.conv2_1(x)))  # channel_size : 12, Receptive Field : 5
+        x = F.relu(self.bn3(self.conv3(x)))  # channel_size : 12, Receptive Field : 9
+        x = F.relu(self.bn4(self.conv4(x)))  # channel_size : 10, Receptive Field : 13
+        x = F.max_pool2d(x, 2)  # channel_size : 5, Receptive Field : 15
+        x = F.relu(self.bn4_1(self.conv4_1(x)))  # channel_size : 5, Receptive Field : 15
+        x = F.relu(self.bn5(self.conv5(x)))# channel_size : 3, Receptive Field : 23
+        x = self.conv6(x)# channel_size : 1, Receptive Field : 31
+
+        x = x.view(-1, 10)
+        return F.log_softmax(x, dim=1)
+
+
 class Model1(nn.Module):
     def __init__(self):
       super(Model1, self).__init__()
