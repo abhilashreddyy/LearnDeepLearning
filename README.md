@@ -15,6 +15,7 @@ Below is a list of assignments available in this repository:
 | [S6-Assignment-Solution/Part-1/README.md](S6-Assignment-Solution/Part-1/README.md) | Part 1 of the assignment discusses the fundamental concepts of the backpropagation algorithm and its representation in Excel formulas. It also includes insights into training processes and result analysis. |
 | [S6-Assignment-Solution/Part-2/README.md](S6-Assignment-Solution/Part-2/README.md) | Part 2 of the assignment implements a Convolutional Neural Network (CNN) for handwritten digit classification using PyTorch. The CNN architecture includes convolutional layers, batch normalization, dropout, and max-pooling layers, achieving a high accuracy of 99.4% on the MNIST dataset. |
 | [S7-Assignment-Solution/README.md](S7-Assignment-Solution/README.md) | Explore a series of experiments refining a CNN model for high accuracy with minimal parameters. Key techniques include batch normalization, regularization, and strategic adjustments. Achieves 99.45% test accuracy. For details, explore the provided folder. |
+| [S8-Assignment-Solution/README.md](S8-Assignment-Solution/README.md) | Compare CIFAR-10 models with Batch Normalization, Layer Normalization, and Group Normalization techniques. |
 
 ## Contributing
 
