@@ -7,7 +7,7 @@
 3. [Model Architecture](#model-architecture)
 4. [Data Augmentation](#data-augmentation)
 5. [Results](#results)
-6. [Classwise Accuracy](#classwise-accuracy)
+6. [Training & Testing Loss and Accuracies](#Training & Testing Loss and Accuracies)
 7. [Misclassified Images](#misclassified-images)
 
 ## 🎯 Problem Statement
