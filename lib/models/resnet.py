@@ -1,3 +1,7 @@
+import torch.nn.functional as F
+import torch.nn as nn
+
+
 '''ResNet in PyTorch.
 '''
 class BasicBlock(nn.Module):
