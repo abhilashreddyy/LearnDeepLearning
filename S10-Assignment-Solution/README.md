@@ -1,4 +1,4 @@
-# 🌐 ERA2 Session 10 Assignment 🌐
+# ERA2 Session 10 Assignment
 
 ## 📌 Table of Contents
 
@@ -6,9 +6,10 @@
 2. [Introduction](#introduction)
 3. [Model Architecture](#model-architecture)
 4. [Data Augmentation](#data-augmentation)
-5. [Results](#results)
-6. [Training & Testing Loss and Accuracies](#Training & Testing Loss and Accuracies)
-7. [Misclassified Images](#misclassified-images)
+5. [Learning Rate Finder](#lr-finder)
+6. [Results](#results)
+7. [Training & Testing Loss and Accuracies](#training-testing-loss-and-accuracies)
+8. [Misclassified Images](#misclassified-images)
 
 ## 🎯 Problem Statement
 
@@ -45,7 +46,7 @@
 
 ## 📚 Introduction
 
-The goal of this assignment is to design a Convolutional Neural Network (CNN) using PyTorch and the Albumentation library to achieve an accuracy of 85% on the CIFAR10 dataset. The code for this assignment is provided in a Jupyter Notebook, which can be found [here](./ERA2_S10_CIFAR10_Resnet.ipynb).
+The goal of this assignment is to design a Convolutional Neural Network (CNN) using PyTorch and the Albumentation library to achieve an accuracy of 90% on the CIFAR10 dataset. The code for this assignment is provided in a Jupyter Notebook, which can be found [here](./ERAV2_S10_CIFAR10_Resnet.ipynb).
 
 The CIFAR10 dataset consists of 60,000 32x32 color training images and 10,000 test images, labeled into 10 classes. The 10 classes represent airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. The dataset is divided into 50,000 training images and 10,000 validation images.
 
@@ -60,12 +61,16 @@ The model uses data augmentation techniques to improve robustness and prevent ov
 Sample images,  
 ![augmentation](./images/data_loader_preview.png)
 
+## 🚀 Learning Rate Finder
+Generally Finding a good learning rate to train a model is very crucial. If we dont find a good learning rate then we may end up spending a lot of resource in training the model loner
+
+
 ## 📈 Results
 
 The model was trained for 24 epochs and achieved an accuracy of 91.34% on the test set. 
 
 Trainling accuracy: 96.74 %
-Test accuracy: 92.9 %
+Test accuracy: 92.90 %
 
 ## 📊 Training & Testing Loss and Accuracies
 
