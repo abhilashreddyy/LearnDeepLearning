@@ -30,9 +30,9 @@ def plt_misclassified_images(wrongly_predicted_samples, classes, grid_shape = (2
       plt.show()
 
 
-def plot_grad_cam_images(model, misclassified_data, classes):
+def plot_grad_cam_images(model, misclassified_data, classes, apply_grad = True):
     model.eval()
-    target_layers = [model.layer4[-1]]
+    target_layers = [model.layer3[-1]]
 
     # Construct the CAM object once, and then re-use it on many images:
     cam = GradCAM(model=model, target_layers=target_layers)
@@ -44,7 +44,9 @@ def plot_grad_cam_images(model, misclassified_data, classes):
         targets = [ClassifierOutputTarget(misclassified_data["target"][i])]
         grayscale_cam = cam(input_tensor=input_tensor, targets=targets)
         grayscale_cam = grayscale_cam[0, :]
-        visualization = show_cam_on_image(de_normalize(misclassified_data["image"][i].cpu()), grayscale_cam, use_rgb=True, image_weight=0.7)
+        visualization = de_normalize(misclassified_data["image"][i].cpu())
+        if apply_grad == True:
+          visualization = show_cam_on_image(visualization, grayscale_cam, use_rgb=True, image_weight=0.7)
 
         # npimg = unnormalize(misclassified_images[i].cpu())
         # plt.imshow(npimg, cmap='gray', interpolation='none')
