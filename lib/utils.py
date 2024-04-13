@@ -30,6 +30,7 @@ def plt_misclassified_images(wrongly_predicted_samples, classes, grid_shape = (2
       plt.show()
 
 
+
 def plot_grad_cam_images(model, misclassified_data, classes, apply_grad = True):
     model.eval()
     target_layers = [model.layer3[-1]]
